@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <script src="../js/scripts.js"></script>
+    <h1 class="list-title">Lista de Productos</h1>
+    <table id="products-table" class="table">
+        <thead id="products-table-head">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <a onclick="showForm()" class="add-product">Agregar Producto</a>
+
+    <div class="add-form" id="add-product-form">
+        <form id="product-form" onsubmit="addProduct(document.getElementById('name').value, document.getElementById('description').value, document.getElementById('price').value, event);">
+            <input type="text" id="name" placeholder="Nombre">
+            <input type="text" id="description" placeholder="Descripción">
+            <input type="number" id="price" placeholder="Precio">
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+
+    <div id="view-modal" class="view-product-data"></div>
+
+    <div id="edit-modal" class="view-product-data"></div>
+
+    <div id="delete-modal" class="view-product-data"></div>
+</body>
+</html>
